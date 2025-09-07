@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Second Life</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Thanh topbar -->
+  <div class="topbar">
+    <span id="user-info">Xin chào!</span>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <h1>Second Life - Trang chủ</h1>
+
+  <!-- Chọn khu vực -->
+  <div class="section">
+    <h2>Chọn khu vực</h2>
+    <select id="location-select">
+      <option value="">Tất cả</option>
+      <option value="Hà Nội">Hà Nội</option>
+      <option value="TP HCM">TP HCM</option>
+      <option value="Đà Nẵng">Đà Nẵng</option>
+    </select>
+  </div>
+
+  <!-- Tìm kiếm -->
+  <div class="section">
+    <h2>Tìm kiếm sản phẩm</h2>
+    <input id="search-q" placeholder="Nhập tên sản phẩm...">
+    <button onclick="searchProducts()">Tìm</button>
+  </div>
+
+  <!-- Danh sách sản phẩm -->
+  <div class="section">
+    <h2>Kết quả</h2>
+    <ul id="product-list"></ul>
+  </div>
+
+  <!-- Giỏ hàng -->
+  <div class="section">
+    <h2>Giỏ hàng</h2>
+    <button onclick="viewCart()">Xem giỏ hàng</button>
+    <button onclick="checkout()">Thanh toán</button>
+    <ul id="cart-list"></ul>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    // Kiểm tra token khi load trang
+    document.addEventListener("DOMContentLoaded", () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "signin.html"; // nếu chưa login thì quay lại login
+        return;
+      }
+      // Gọi API để lấy thông tin user
+      const userId = parseJwt(token).sub;
+      document.getElementById("user-info").innerText = "Xin chào, user: " + userId;
+    });
+  </script>
+</body>
+</html>
