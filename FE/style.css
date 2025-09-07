@@ -1,0 +1,102 @@
+/* Reset cơ bản */
+body, h1, h2, p, input, button, ul {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Nền + căn giữa */
+body {
+  background: #f5f6fa;
+  color: #2f3640;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Container chính */
+h1 {
+  margin-bottom: 20px;
+  color: #192a56;
+}
+
+h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #273c75;
+  font-size: 18px;
+}
+
+/* Input và button */
+input {
+  margin: 5px;
+  padding: 8px 12px;
+  border: 1px solid #dcdde1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #00a8ff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0097e6;
+}
+
+/* Messages */
+p {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #718093;
+}
+
+/* Danh sách sản phẩm + giỏ hàng */
+ul {
+  list-style: none;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+ul li {
+  background: white;
+  border: 1px solid #dcdde1;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+ul li:hover {
+  background: #f1f2f6;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  background: #273c75;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 600px;
+}
